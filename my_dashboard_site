@@ -1,0 +1,6 @@
+my_dashboard_site/
+├─ index.html   (می‌تونی login.html هم بذاری index)
+├─ register.html
+├─ dashboard.html
+├─ fonts/       (فونت Vazirmatn اگر محلی هست)
+└─ css/         (اختیاری برای فایل استایل جداگانه)

@@ -1,0 +1,186 @@
+ <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محصولات ما</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.1/dist/font-face.css">
+<link rel="stylesheet" href="../fonts/Vazirmatn-font-face.css" />
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Vazirmatn', sans-serif;}
+
+body {
+  direction: rtl;
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+  position: relative;
+  color: #e6eef8;
+  padding: 40px 20px;
+}
+
+body::before {
+  content:"";
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: #ffd700;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(255,255,255,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 40px rgba(255,255,255,0.2);
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.project-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.project-card .price {
+  font-weight: bold;
+  color: #00d8ff;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.back-btn a {
+  background: rgba(158,134,200,0.8);
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.back-btn a:hover {
+  background: #a58ded;
+  box-shadow: 0 0 15px #a58ded;
+}
+.back-btn a {
+  background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+  padding:12px 22px;
+  color:#ffd700;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:bold;
+  transition:0.3s;
+}
+.back-btn a:hover {
+  background: linear-gradient(90deg, #3d2bd7, #7c3aed);
+  box-shadow: 0 0 12px #ffd700;
+}
+</style>
+</head>
+<body>
+
+<h1>محصولات ما</h1>
+<div class="container">
+
+  <div class="project-card">
+    <h3>طراحی سایت شرکتی</h3>
+    <p>طراحی حرفه‌ای وبسایت برای شرکت‌ها با ظاهری مدرن و کاربرپسند</p>
+    <p class="price">قیمت: 1,200,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>طراحی سایت فروشگاهی</h3>
+    <p>راه‌اندازی فروشگاه آنلاین با امکانات پیشرفته و پرداخت امن.</p>
+    <p class="price">قیمت: 850,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>سئو و بهینه‌سازی</h3>
+    <p>بهبود رتبه سایت شما در گوگل و افزایش بازدید واقعی.</p>
+    <p class="price">قیمت: 980,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>طراحی لوگو</h3>
+    <p>لوگوهای خلاقانه و منحصر به فرد برای برند شما.</p>
+    <p class="price">قیمت: 980,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>توسعه اپلیکیشن موبایل</h3>
+    <p>اپلیکیشن‌های حرفه‌ای برای اندروید و iOS.</p>
+    <p class="price">قیمت: 980,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>طراحی رابط کاربری (UI)</h3>
+    <p>رابط کاربری زیبا و کاربردی برای تجربه بهتر کاربر.</p>
+    <p class="price">قیمت: 980,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>طراحی تجربه کاربری (UX)</h3>
+    <p>بهینه‌سازی مسیر کاربر برای افزایش رضایت و تبدیل.</p>
+    <p class="price">قیمت: 980,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>برندسازی دیجیتال</h3>
+    <p>استراتژی کامل برای رشد و دیده شدن برند شما در فضای آنلاین.</p>
+    <p class="price">قیمت: 980,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>بازاریابی شبکه‌های اجتماعی</h3>
+    <p>مدیریت و تبلیغات حرفه‌ای در شبکه‌های اجتماعی مختلف.</p>
+    <p class="price">قیمت: 980,000 تومان</p>
+  </div>
+
+  <div class="project-card">
+    <h3>تولید محتوا</h3>
+    <p>محتوای حرفه‌ای متنی، تصویری و ویدیویی برای سایت و شبکه‌ها.</p>
+    <p class="price">قیمت: 980,000 تومان</p>
+  </div>
+
+</div>
+
+<div class="back-btn">
+  <a href="./dashboard.html">بازگشت</a>
+</div>
+
+</body>
+</html>

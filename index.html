@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>درباره ما — هولدینگ لوکس</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family:'Vazirmatn',sans-serif;
+  direction:rtl;
+  background:#111;
+  color:#fff;
+}
+
+.about-hero {
+  width:100%;
+  height:100vh;
+  background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+.about-hero::before {
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+  z-index:1;
+}
+
+.glass-box {
+  position:relative;
+  background: rgba(0,0,0,0.5);
+  border-radius: 20px;
+  padding: 40px 50px;
+  max-width:700px;
+  backdrop-filter: blur(20px);
+  border:1px solid rgba(255,255,255,0.15);
+  color:#fff;
+  text-align:right;
+  box-shadow: 0 8px 35px rgba(0,0,0,0.7);
+  animation: fadeIn 1s ease-out;
+  z-index:2;
+}
+.glass-box h1 {
+  font-size:36px;
+  margin-bottom:20px;
+  font-weight:bold;
+  color:#ffd700;
+  text-shadow: 0 2px 8px #000;
+}
+.glass-box p {
+  font-size:20px;
+  line-height:1.9;
+  opacity:0.9;
+  color:#eee;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+.back-btn {
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+.back-btn a {
+  background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+  padding:12px 22px;
+  color:#ffd700;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:bold;
+  transition:0.3s;
+}
+.back-btn a:hover {
+  background: linear-gradient(90deg, #3d2bd7, #7c3aed);
+  box-shadow: 0 0 12px #ffd700;
+}
+.back-btn a {
+  background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+  padding:12px 22px;
+  color:#ffd700;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:bold;
+  transition:0.3s;
+}
+.back-btn a:hover {
+  background: linear-gradient(90deg, #3d2bd7, #7c3aed);
+  box-shadow: 0 0 12px #ffd700;
+}
+
+</style>
+</head>
+<body>
+
+<div class="about-hero">
+  <div class="glass-box">
+    <h1>درباره هولدینگ ما</h1>
+    <p>
+      هولدینگ ما مجموعه‌ای یکپارچه از شرکت‌های فناوری، توسعه نرم‌افزار، طراحی وب و راهکارهای نوآورانه است.
+      ما تلاش می‌کنیم با استفاده از تیمی متخصص، پروژه‌هایی مدرن و آینده‌محور ارائه دهیم.
+    </p>
+    <div class="back-btn">
+      <a href="./untitled-1.html">بازگشت به صفحه اصلی</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>پروژه‌ها</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+    margin: 0;
+    font-family: "Vazirmatn", sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+    position: relative;
+    color: #e6eef8;
+    padding: 40px 20px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.85));
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+
+.project-card {
+    background: rgba(12, 0, 0, 0.478);
+    backdrop-filter: blur(15px);
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(249, 224, 2, 0.976);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #fdfcfc;
+}
+
+
+.vote-box { margin-top: 12px;
+     display: flex;
+    flex-direction: column;
+     gap: 8px; }
+.vote-box input[type="text"] { padding: 8px;
+     border-radius: 8px; 
+    border: 1px solid rgba(255,255,255,0.2);
+     background: rgba(255,255,255,0.03); color: white; }
+.vote-box button { background: #d4af37;
+     color: white;
+     border: none; border-radius: 8px;
+     padding: 6px 12px; 
+    cursor: pointer; transition: 0.2s; }
+.vote-box button:hover { background: #0303001f; }
+.comments { margin-top: 8px;
+     font-size: 13px;
+     color: #cfcfcf;
+     max-height: 120px;
+     overflow-y: auto; }
+
+.back-btn { display: flex;
+    justify-content: center;
+     margin-top: 30px; }
+.back-btn a { background: #0a001ae5;
+ padding: 10px 18px; color: white;
+ text-decoration: none;
+ border-radius: 10px; }
+body {
+    margin:0;
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    min-height:100vh;
+    background: #0a0a0a url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+    color:#fff;
+    padding: 40px 20px;
+    position: relative;
+}
+body::before {
+    content:"";
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.7);
+    z-index:-1;
+}
+
+h1 {
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.5rem;
+    background: linear-gradient(135deg,#d4af37,#f6e27a);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.container {
+    max-width: 1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(212,175,55,0.3);
+    transition:0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(212,175,55,0.6);
+}
+
+.skill-card h3,
+.skill-card h4 {
+    margin:10px 0;
+    font-weight:500;
+    color: #fdf5e6;
+}
+
+.back-btn {
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.back-btn a {
+    background: linear-gradient(135deg,#d4af37,#f6e27a);
+    padding:12px 25px;
+    color:#0a0a0a;
+    text-decoration:none;
+    border-radius:15px;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+.back-btn a:hover { opacity:0.9; transform:translateY(-2px); }
+
+@media(max-width:768px){ .container{ grid-template-columns:1fr; } }
+.back-btn {
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+.back-btn a {
+  background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+  padding:12px 22px;
+  color:#ffd700;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:bold;
+  transition:0.3s;
+}
+.back-btn a:hover {
+  background: linear-gradient(90deg, #3d2bd7, #7c3aed);
+  box-shadow: 0 0 12px #ffd700;
+}
+</style>
+</head>
+<body>
+
+<h1>پروژه‌ها</h1>
+
+<div class="container">
+
+    <div class="project-card" data-project="project1">
+        <h3>فروشگاه آنلاین</h3>
+        <p>فروشگاه آنلاین...</p>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+    <div class="project-card" data-project="project2">
+        <h3>سایت شرکتی</h3>
+        <p>سایت شرکتی...</p>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+    <div class="project-card" data-project="project3">
+        <h3>پنل مدیریت</h3>
+        <p>پنل کاربری...</p>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+</div>
+
+<div class="back-btn">
+    <a href="./Untitled-1.html">بازگشت به صفحه اصلی</a>
+</div>
+
+<script>
+window.onload = () => {
+    document.querySelectorAll(".project-card").forEach(card => {
+        const project = card.getAttribute("data-project");
+        const stored = JSON.parse(localStorage.getItem("project_" + project)) || [];
+        const commentsDiv = card.querySelector(".comments");
+        stored.forEach(c => {
+            const p = document.createElement("p");
+            p.textContent = c;
+            commentsDiv.appendChild(p);
+        });
+
+        const btn = card.querySelector("button");
+        const input = card.querySelector("input");
+        btn.addEventListener("click", () => {
+            const text = input.value.trim();
+            if(!text) return;
+            const stored = JSON.parse(localStorage.getItem("project_" + project)) || [];
+            stored.push(text);
+            localStorage.setItem("project_" + project, JSON.stringify(stored));
+            const p = document.createElement("p");
+            p.textContent = text;
+            commentsDiv.appendChild(p);
+            input.value = "";
+        });
+    });
+};
+</script>
+
+</body>
+</html>

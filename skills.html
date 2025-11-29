@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>مهارت‌ها</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: "Vazirmatn", sans-serif;
+    direction: rtl;
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+    position: relative;
+    color: #e6eef8;
+    padding: 40px 20px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.85));
+    z-index: -1;
+}
+
+h1 { 
+    text-align: center; 
+    margin-bottom: 30px; 
+    font-size: 28px; 
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: rgba(12, 10, 0, 0.565);
+    backdrop-filter: blur(15px);
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgb(251, 226, 1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 10px 40px rgb(253, 215, 1);
+}
+
+.skill-card h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.bar {
+    margin-top: 14px;
+    width: 100%;
+    background: rgba(248, 236, 0, 0.973);
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.bar span {
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ffc00309, #01000a);
+    width: 0;
+    transition: width 1.4s ease;
+}
+
+.percent {
+    margin-top: 8px;
+    font-size: 13px;
+    opacity: .8;
+    color: #cfcfcf;
+}
+
+.vote-box { 
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.vote-box input[type="text"] { 
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.998);
+    background: rgba(255,255,255,0.03);
+    color: white;
+}
+.vote-box button { 
+    background: #7c3aed55;
+    color: white;
+    border: none; 
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+.vote-box button:hover { 
+    background: #f6fa8b; 
+}
+
+.comments { 
+    margin-top: 8px;
+    font-size: 13px;
+    color: #cfcfcf;
+    max-height: 120px;
+    overflow-y: auto; 
+}
+
+.back-btn { 
+    display: flex;
+    justify-content: center; 
+    margin-top: 30px; 
+}
+.back-btn a { 
+    background: #ffd5015b;
+    padding: 10px 18px; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 10px; 
+    transition: 0.3s;
+}
+.back-btn a:hover {
+    background: linear-gradient(90deg, #3926e3, #732bef);
+    box-shadow: 0 0 12px #ffd700;
+}
+</style>
+</head>
+<body>
+<h1>مهارت ها</h1>
+
+<div class="container" id="skillsContainer">
+
+    <div class="skill-card" data-skill="HTML">
+        <h3>HTML</h3>
+        <div class="bar"><span data-percent="95%"></span></div>
+        <div class="percent">95%</div>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+    <div class="skill-card" data-skill="CSS">
+        <h3>CSS</h3>
+        <div class="bar"><span data-percent="90%"></span></div>
+        <div class="percent">90%</div>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+    <div class="skill-card" data-skill="UI/UX">
+        <h3>UI/UX</h3>
+        <div class="bar"><span data-percent="94%"></span></div>
+        <div class="percent">94%</div>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+    <div class="skill-card" data-skill="Node.js">
+        <h3>Node.js</h3>
+        <div class="bar"><span data-percent="91%"></span></div>
+        <div class="percent">91%</div>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+    <div class="skill-card" data-skill="Next.js">
+        <h3>Next.js</h3>
+        <div class="bar"><span data-percent="88%"></span></div>
+        <div class="percent">88%</div>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+    <div class="skill-card" data-skill="React">
+        <h3>React</h3>
+        <div class="bar"><span data-percent="97%"></span></div>
+        <div class="percent">97%</div>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+    <div class="skill-card" data-skill="JavaScript">
+        <h3>JavaScript</h3>
+        <div class="bar"><span data-percent="85%"></span></div>
+        <div class="percent">85%</div>
+        <div class="vote-box">
+            <input type="text" placeholder="نظر خود را بنویسید">
+            <button>ثبت نظر</button>
+        </div>
+        <div class="comments"></div>
+    </div>
+
+</div>
+
+<div class="back-btn">
+    <a href="index.html">بازگشت به صفحه اصلی</a>
+</div>
+
+<script>
+window.onload = () => {
+    document.querySelectorAll(".bar span").forEach(bar => {
+        bar.style.width = bar.getAttribute("data-percent");
+    });
+
+    document.querySelectorAll(".skill-card").forEach(card => {
+        const skill = card.getAttribute("data-skill");
+        const stored = JSON.parse(localStorage.getItem("skill_" + skill)) || [];
+        const commentsDiv = card.querySelector(".comments");
+        stored.forEach(c => {
+            const p = document.createElement("p");
+            p.textContent = c;
+            commentsDiv.appendChild(p);
+        });
+
+        const btn = card.querySelector("button");
+        const input = card.querySelector("input");
+
+        btn.addEventListener("click", () => {
+            const text = input.value.trim();
+            if(!text) return;
+            stored.push(text);
+            localStorage.setItem("skill_" + skill, JSON.stringify(stored));
+
+            const p = document.createElement("p");
+            p.textContent = text;
+            commentsDiv.appendChild(p);
+
+            input.value = "";
+        });
+    });
+};
+</script>
+
+</body>
+</html>
