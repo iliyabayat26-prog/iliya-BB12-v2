@@ -14,7 +14,7 @@ body {
     min-height: 100vh;
     background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
     position: relative;
-    color: #e6eef8;
+    color: #f7c603d6;
     padding: 40px 20px;
 }
 
@@ -22,7 +22,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.85));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0,0,0,0.85));
     z-index: -1;
 }
 
@@ -41,18 +41,18 @@ h1 {
 }
 
 .skill-card {
-    background: rgba(12, 10, 0, 0.565);
+    background: rgba(12, 10, 0, 0.679);
     backdrop-filter: blur(15px);
     padding: 22px;
     border-radius: 16px;
-    box-shadow: 0 8px 25px rgb(251, 226, 1);
+    box-shadow: 0 8px 25px rgba(251, 205, 1, 0.616);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
 .skill-card:hover {
     transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 10px 40px rgb(253, 215, 1);
+    box-shadow: 0 10px 40px rgba(253, 215, 1, 0.387);
 }
 
 .skill-card h3 {
@@ -125,21 +125,24 @@ h1 {
     justify-content: center; 
     margin-top: 30px; 
 }
-.back-btn a { 
-    background: #ffd5015b;
-    padding: 10px 18px; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 10px; 
-    transition: 0.3s;
+.back-btn a {
+  background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+  padding:12px 22px;
+  color:#ffd700;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:bold;
+  transition:0.3s;
 }
 .back-btn a:hover {
-    background: linear-gradient(90deg, #3926e3, #732bef);
-    box-shadow: 0 0 12px #ffd700;
+  background: linear-gradient(90deg, #3d2bd7, #7c3aed);
+  box-shadow: 0 0 12px #ffd700;
 }
 </style>
 </head>
+
 <body>
+    
 <h1>مهارت ها</h1>
 
 <div class="container" id="skillsContainer">
@@ -260,7 +263,7 @@ window.onload = () => {
         });
     });
 };
-</script>
+</scrip>
 
 </body>
 </html>

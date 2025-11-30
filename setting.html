@@ -7,19 +7,21 @@
 <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.1/Vazirmatn-font-face.css" rel="stylesheet" />
 <style>
 :root {
-    --accent: #f6d208f1;
-    --accent2: #f7c60597;
+    --back
+    --accent: #3443986b;
+    --accent2: #f4d003a8;
     --text: #fdcf05;
-    --muted: #fbce07b3;
-    --card: rgba(0, 0, 0, 0.935);
+    --muted: #f7d308c9;
+    --card: rgba(0, 0, 0, 0.874);
     --radius: 14px;
-    --shadow: 0 10px 40px rgba(247, 191, 7, 0.74);
+    --shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
 body {
     background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=2000&q=100');
     background-size: cover;
+    background-color: rgba(0, 8, 8, 0.706);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -35,7 +37,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.746), rgba(0,0,0,0.65));
     z-index: 0;
 }
 
@@ -45,11 +47,11 @@ body::before {
     width: 100%;
     max-width: 700px;
     backdrop-filter: blur(20px);
-    background: rgba(0, 0, 0, 0.655);
+    background: rgba(0, 0, 0, 0.722);
     padding: 35px;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid rgb(243, 196, 8);
+    box-shadow:var(--shadow)
+    border: 1px solid rgba(255,255,255,0.15);
     animation: fadeIn 0.9s ease forwards;
 }
 
@@ -76,8 +78,8 @@ input, select, textarea {
     padding: 12px;
     border-radius: var(--radius);
     border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(6, 0, 0, 0.309);
-    color: #fab701;
+    background: rgba(255,255,255,0.08);
+    color: #fab405cf;
     font-size: 14px;
     margin-bottom: 18px;
     outline: none;
@@ -91,31 +93,27 @@ input:focus, textarea:focus, select:focus { border-color: var(--accent2); }
     padding: 12px;
     border-radius: var(--radius);
     border: none;
-    color: #fcfbf9;
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
     transition: .3s;
     font-size: 16px;
 }
-.btn:hover { background:linear-gradient(); transform: translateY(-2px); }
+.btn:hover { background: #f8cf03bd; transform: translateY(-2px); }
 
-/* دکمه بازگشت */
-.back-btn {
-    margin-bottom: 20px;
-}
+
 .back-btn a {
-    display: inline-block;
-    text-decoration: none;
-    background: rgba(52,67,152,0.6);
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: var(--radius);
-    font-weight: bold;
-    transition: 0.3s;
+  background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+  padding:12px 22px;
+  color:#ffd700;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:bold;
+  transition:0.3s;
 }
 .back-btn a:hover {
-    background: #8c6bf0;
-    transform: translateY(-2px);
+  background: linear-gradient(90deg, #3d2bd7, #7c3aed);
+  box-shadow: 0 0 12px #0a0902;
 }
 
 </style>
@@ -123,10 +121,6 @@ input:focus, textarea:focus, select:focus { border-color: var(--accent2); }
 <body>
 
 <div class="container">
-    <div class="back-btn">
-        <a href="index.html">&#8592; بازگشت به سایت</a>
-    </div>
-
     <h2>تنظیمات سایت</h2>
 
     <label>نام سایت</label>
@@ -145,7 +139,18 @@ input:focus, textarea:focus, select:focus { border-color: var(--accent2); }
         <option>Arabic</option>
     </select>
 
+   <div class="container">
     <button class="btn">ذخیره تنظیمات</button>
+   </div>
+    <div id="ordersSection">
+  <div id="ordersContainer"></div>
+  <div class="back-btn">
+    <br>
+    <a href="./dashboard.html" a class="btn">بازگشت</a>
+
+ 
+  </div>
+</div>
 </div>
 
 </body>
