@@ -7,20 +7,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin:0;
-  font-family:'Vazirmatn',sans-serif;
-  direction:rtl;
-  background:#111;
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Vazirmatn',sans-serif;}
+
+body, html {
+  height: 200vh;
+  overflow-x: hidden;
+  direction: rtl;
+ background: linear-gradient(-45deg, #1a1a1a, #2c3e50, #34495e, #1a1a1a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color:#fff;
+  position: relative;
 }
+
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+#particles-js {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+
+#intro {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
 
 .about-hero {
   width:100%;
   height:100vh;
-  background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -85,37 +117,70 @@ body {
 .back-btn a:hover {
   background: linear-gradient(90deg, #3d2bd7, #7c3aed);
   box-shadow: 0 0 12px #ffd700;
-}
-.back-btn a {
-  background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
-  padding:12px 22px;
-  color:#ffd700;
-  text-decoration:none;
-  border-radius:12px;
-  font-weight:bold;
-  transition:0.3s;
-}
-.back-btn a:hover {
-  background: linear-gradient(90deg, #3d2bd7, #7c3aed);
-  box-shadow: 0 0 12px #ffd700;
-}
-
+}#content { display: none; }
 </style>
 </head>
 <body>
 
-<div class="about-hero">
-  <div class="glass-box">
-    <h1>درباره هولدینگ ما</h1>
-    <p>
-      هولدینگ ما مجموعه‌ای یکپارچه از شرکت‌های فناوری، توسعه نرم‌افزار، طراحی وب و راهکارهای نوآورانه است.
-      ما تلاش می‌کنیم با استفاده از تیمی متخصص، پروژه‌هایی مدرن و آینده‌محور ارائه دهیم.
-    </p>
-    <div class="back-btn">
-      <a href="./untitled-1.html">بازگشت به صفحه اصلی</a>
+
+<div id="particles-js"></div>
+
+
+<div id="intro">
+  <div>به سایت خودتون خوش اومدید 🌟</div>
+</div>
+
+
+<div id="content">
+  <div class="about-hero">
+    <div class="glass-box">
+      <h1>درباره هولدینگ ما</h1>
+      <p>
+        هولدینگ ما مجموعه‌ای یکپارچه از شرکت‌های فناوری، توسعه نرم‌افزار، طراحی وب و راهکارهای نوآورانه است.
+        ما تلاش می‌کنیم با استفاده از تیمی متخصص، پروژه‌هایی مدرن و آینده‌محور ارائه دهیم.
+      </p>
+      <div class="back-btn">
+        <a href="./untitled-1.html">ورود</a>
+      </div>
     </div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#ffd700" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.6 },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#ffd700", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
+  },
+  "interactivity": {
+    "events": {
+      "onhover": { "enable": true, "mode": "repulse" },
+      "onclick": { "enable": true, "mode": "push" }
+    },
+    "modes": {
+      "repulse": { "distance": 100 },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
+});
+
+
+setTimeout(() => {
+  document.getElementById("intro").style.opacity = "0";
+  setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  }, 500);
+}, 500);
+</script>
 
 </body>
 </html>

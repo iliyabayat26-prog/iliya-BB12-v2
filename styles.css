@@ -1,28 +1,33 @@
 /* ==================== Root Variables ==================== */
+/* ===== Root Variables ===== */
 :root {
     --accent: #4e5aa06b;
     --accent2: #f5de0b71;
     --text: #fddc05;
     --muted: #eec304d3;
-    --card: rgba(6, 0, 0, 0.838);
+    --card: rgba(12, 0, 0, 0.223);
     --radius: 14px;
     --shadow: 0 10px 40px rgba(245, 200, 4, 0.936);
     --gold: linear-gradient(90deg, #fdcb03, #5c530262);
     --gold-solid: #f9bf00;
-    --black: #0a0a0a;
+    --black: #120000;
     --card-bg: rgba(255, 255, 255, 0.03);
     --border-gold: rgba(212, 175, 55, 0.35);
 }
+
+/* ===== Background Overlay ===== */
 body::before {
-    content:"";
+    content: "";
     position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0, 0, 0, 0.585);
-    z-index:-1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hwb(0 0% 93% / 0.363);
+    z-index: -1;
 }
 
-
+/* ===== Base Body ===== */
 body {
     margin: 0;
     font-family: "Vazirmatn", sans-serif;
@@ -30,12 +35,29 @@ body {
     min-height: 100vh;
     background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
     position: relative;
-    color: #f7c603d6;
+    color: #fbd308d6;
     padding: 40px 20px;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-/* ==================== Global Styles ==================== */
+/* ===== Particle Background ===== */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* ===== Reset ===== */
 * {
     margin: 0;
     padding: 0;
@@ -43,16 +65,7 @@ body {
     font-family: 'Vazirmatn', sans-serif;
 }
 
-/*ody {
-    margin: 0;
-    direction: rtl;
-    font-family: "Shabnam", sans-serif;
-    line-height: 1.8;
-    color: #fdfcf9da;
-    background: #0a0a0a;
-}
-
-/* ==================== Animations ==================== */
+/* ===== Animations ===== */
 .fade {
     opacity: 0;
     transform: translateY(20px);
@@ -66,22 +79,11 @@ body {
     }
 }
 
-@keyframes wheelMove {
-    0% {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(-50%, 20px);
-    }
-}
-
-/* ==================== Header ==================== */
+/* ===== Header ===== */
 header {
     position: sticky;
     top: 0;
-    background: #000000c1;
+    background: #13000063;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-gold);
     padding: 20px 40px;
@@ -115,7 +117,7 @@ header nav a:hover {
     border-radius: 12px;
 }
 
-/* ==================== Buttons ==================== */
+/* ===== Buttons ===== */
 .btn {
     padding: 12px 22px;
     border-radius: 8px;
@@ -123,7 +125,7 @@ header nav a:hover {
     border: none;
     font-weight: bold;
     cursor: pointer;
-    color: #0b0000;
+    color: #080000;
     transition: 0.3s;
     text-decoration: none;
     display: inline-block;
@@ -141,10 +143,10 @@ header nav a:hover {
 
 .btn.secondary:hover {
     background: var(--gold);
-    color: #fdae04;
+    color: #edb306;
 }
 
-/* ==================== Layout ==================== */
+/* ===== Layout ===== */
 .wrap {
     width: 90%;
     max-width: 1200px;
@@ -155,7 +157,7 @@ header nav a:hover {
     gap: 32px;
 }
 
-/* ==================== Hero Section ==================== */
+/* ===== Hero Section ===== */
 .hero {
     display: flex;
     flex-wrap: wrap;
@@ -170,13 +172,13 @@ header nav a:hover {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 30px;
-    color: rgb(248, 191, 4);
+    color: rgb(252, 250, 250);
     transition: 0.3s;
 }
 
 .hero .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(237, 182, 3, 0.836);
+    box-shadow: 0 15px 50px rgba(235, 169, 16, 0.937);
 }
 
 .hero-buttons {
@@ -186,7 +188,7 @@ header nav a:hover {
     flex-wrap: wrap;
 }
 
-/* ==================== Stats ==================== */
+/* ===== Stats ===== */
 .statbox {
     display: flex;
     justify-content: center;
@@ -196,7 +198,7 @@ header nav a:hover {
 
 .stat {
     flex: 1;
-    background: rgba(9, 0, 0, 0.868);
+    background: rgba(16, 0, 0, 0.868);
     padding: 16px;
     border-radius: 12px;
     text-align: center;
@@ -209,23 +211,23 @@ header nav a:hover {
     -webkit-text-fill-color: transparent;
 }
 
-/* ==================== Cards ==================== */
+/* ===== Cards ===== */
 .card {
     background: var(--card-bg);
     backdrop-filter: blur(12px);
     padding: 30px;
     border-radius: 18px;
-    border: 1px solid rgb(10, 0, 0);
-    box-shadow: 0 0 25px rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0 0 25px rgb(241, 184, 12);
     transition: 0.35s;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 0 35px rgba(245, 188, 1, 0.885);
+    box-shadow: 0 0 35px rgba(246, 245, 243, 0.885);
 }
 
-/* ==================== Services ==================== */
+/* ===== Services ===== */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -233,32 +235,32 @@ header nav a:hover {
 }
 
 .service-card {
-    background: rgba(0, 12, 0, 0.714);
+    background: rgba(0, 0, 0, 0.5);
     padding: 22px;
     border-radius: 16px;
-    border: 1px solid rgb(252, 231, 5);
+    border: 1px solid rgb(254, 253, 249);
     transition: 0.3s;
     text-align: center;
 }
 
 .service-card:hover {
     border-color: var(--gold-solid);
-    box-shadow: 0 0 25px rgb(247, 251, 3);
+    box-shadow: 0 0 25px rgba(251, 214, 3, 0.966);
 }
 
 .service-card h3 {
     margin-bottom: 10px;
-    color: #f4e404;
+    color: #fab325;
     font-size: 1.1rem;
 }
 
 .service-card p {
-    color: #fffdfd;
+    color: #ffffff;
     font-size: 14px;
     line-height: 1.5;
 }
 
-/* ==================== Projects ==================== */
+/* ===== Projects ===== */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -267,7 +269,7 @@ header nav a:hover {
 }
 
 .project {
-    background: rgba(0, 0, 0, 0.604);
+    background: rgba(244, 177, 8, 0.571);
     padding: 16px;
     border-radius: 12px;
     transition: 0.3s;
@@ -275,11 +277,11 @@ header nav a:hover {
 
 .project:hover {
     transform: translateY(-4px);
-    background: rgb(0, 0, 0);
+    background: rgba(8, 8, 8, 0.552);
     box-shadow: var(--shadow);
 }
 
-/* ==================== Skills ==================== */
+/* ===== Skills ===== */
 .skill-box {
     display: flex;
     flex-wrap: wrap;
@@ -289,13 +291,13 @@ header nav a:hover {
 
 .skill {
     padding: 6px 12px;
-    background: rgba(222, 193, 5, 0.958);
+    background: rgba(251, 217, 1, 0.958);
     border-radius: 10px;
     font-size: 13px;
     color: rgb(7, 5, 1);
 }
 
-/* ==================== Forms ==================== */
+/* ===== Form Inputs ===== */
 input,
 textarea {
     padding: 12px;
@@ -312,13 +314,13 @@ textarea:focus {
     border-color: var(--accent);
 }
 
-/* ==================== WhatsApp Popup ==================== */
+/* ===== WhatsApp Popup ===== */
 #whatsappPopup {
     display: none;
     position: fixed;
     bottom: -100px;
     right: 20px;
-    background-color: #000b03d5;
+    background-color: #000b0361;
     color: rgb(250, 184, 3);
     padding: 15px 20px;
     border-radius: 10px;
@@ -333,49 +335,4 @@ textarea:focus {
 }
 
 #whatsappPopup button {
-    background: rgb(151, 112, 3);
-    color: #000401;
-    border: none;
-    padding: 8px 12px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* ==================== Footer ==================== */
-#support {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.separator {
-    margin: 20px auto;
-    border-top: 2px solid #dd3333;
-    width: 40px;
-}
-
-footer {
-    margin-top: auto;
-    padding: 30px 20px;
-    text-align: center;
-    color: var(--muted);
-    font-size: 14px;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-/* ==================== Responsive ==================== */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-    }
-
-    header {
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    nav a {
-        margin: 0 10px;
-    }
-}
+    background: rgb(151, 112, 

@@ -8,35 +8,53 @@
 <style>
 :root {
     --accent: #3443986b;
-    --accent2: #f4d003a8;
-    --text: #fdcf05;
-    --muted: #f7d308c9;
+    --accent2: #ffd700c9; /* طلایی */
+    --text: #ffd700;
+    --muted: #fff1a1;
     --card: rgba(0, 0, 0, 0.874);
     --radius: 14px;
     --shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
+
 body {
-    background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=2000&q=100');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+     background: linear-gradient(-45deg, #1a1a1a, #2c3e50, #34495e, #1a1a1a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: var(--text);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+
 body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.746), rgba(0,0,0,0.65));
-    z-index: 0;
+    
+    position: fixed; top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
 }
 
 .container * { position: relative; z-index: 2; }
@@ -45,10 +63,10 @@ body::before {
     width: 100%;
     max-width: 700px;
     backdrop-filter: blur(20px);
-    background: rgba(0, 0, 0, 0.722);
+    background: rgba(0, 0, 0, 0.45);
     padding: 35px;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: 0 10px 40px rgba(212,175,55,0.6);
     border: 1px solid rgba(255,255,255,0.15);
     animation: fadeIn 0.9s ease forwards;
 }
@@ -58,63 +76,39 @@ body::before {
     to { opacity: 1; transform: translateY(0); }
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: var(--text);
-}
+h2 { text-align: center; margin-bottom: 25px; color: var(--text); text-shadow: 0 2px 6px rgba(0,0,0,0.7); }
 
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 15px;
-    color: var(--muted);
-}
+label { display: block; margin-bottom: 6px; font-size: 15px; color: var(--muted); }
 
 input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: var(--radius);
+    width: 100%; padding: 12px; border-radius: var(--radius);
     border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.08);
-    color: #fab405cf;
-    font-size: 14px;
-    margin-bottom: 18px;
-    outline: none;
-    transition: .2s;
+    background: rgba(255,255,255,0.03); color: #ffd700cc; font-size: 14px;
+    margin-bottom: 18px; outline: none; transition: .2s;
 }
 input:focus, textarea:focus, select:focus { border-color: var(--accent2); }
 
 .btn {
-    width: 100%;
-    background: var(--accent2);
-    padding: 12px;
-    border-radius: var(--radius);
-    border: none;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .3s;
-    font-size: 16px;
+    width: 100%; background: var(--accent2); padding: 12px; border-radius: var(--radius);
+    border: none; color: #000; font-weight: bold; cursor: pointer; transition: .3s; font-size: 16px;
 }
-.btn:hover { background: #f8cf03bd; transform: translateY(-2px); }
+.btn:hover { background: #fbe04d; transform: translateY(-2px); }
 
 .back-btn a {
   background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
-  padding:12px 22px;
-  color:#ffd700;
-  text-decoration:none;
-  border-radius:12px;
-  font-weight:bold;
-  transition:0.3s;
+  padding:12px 22px; color:#ffd700; text-decoration:none; border-radius:12px;
+  font-weight:bold; transition:0.3s;
 }
 .back-btn a:hover {
   background: linear-gradient(90deg, #3d2bd7, #7c3aed);
-  box-shadow: 0 0 12px #0a0902;
+  box-shadow: 0 0 12px #ffd700;
 }
 </style>
 </head>
 <body>
+
+
+<div id="particles-js"></div>
 
 <div class="container">
     <h2>تنظیمات سایت</h2>
@@ -137,14 +131,33 @@ input:focus, textarea:focus, select:focus { border-color: var(--accent2); }
 
     <button class="btn">ذخیره تنظیمات</button>
 
-    <div id="ordersSection">
-        <div id="ordersContainer"></div>
-        <div class="back-btn">
-            <br>
-            <a href="./dashboard.html">بازگشت</a>
-        </div>
+    <div class="back-btn">
+        <br>
+        <a href="./dashboard.html">بازگشت</a>
     </div>
 </div>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#ffd700" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#ffd700", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 2, "out_mode": "out" }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+    "modes": { "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 } }
+  },
+  "retina_detect": true
+});
+</script>
 
 </body>
 </html>

@@ -12,17 +12,35 @@ body {
     font-family: "Vazirmatn", sans-serif;
     direction: rtl;
     min-height: 100vh;
-    background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+    color: #ffd700;
+    padding: 2px 10px;
     position: relative;
-    color: #f7c603d6;
-    padding: 40px 20px;
+     background: linear-gradient(-45deg, #1a1a1a, #2c3e50, #34495e, #1a1a1a);
+    background-size: 900% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow-x: hidden;
 }
 
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
 body::before {
-    content: "";
+  
     position: fixed;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0,0,0,0.85));
+    background: rgba(0,0,0,0.7);
     z-index: -1;
 }
 
@@ -30,6 +48,8 @@ h1 {
     text-align: center; 
     margin-bottom: 30px; 
     font-size: 28px; 
+    color: #ffd700;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
 }
 
 .container {
@@ -41,18 +61,18 @@ h1 {
 }
 
 .skill-card {
-    background: rgba(12, 10, 0, 0.679);
+    background: rgba(12, 10, 0, 0.5);
     backdrop-filter: blur(15px);
     padding: 22px;
     border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(251, 205, 1, 0.616);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
 .skill-card:hover {
     transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 10px 40px rgba(253, 215, 1, 0.387);
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
 }
 
 .skill-card h3 {
@@ -64,7 +84,7 @@ h1 {
 .bar {
     margin-top: 14px;
     width: 100%;
-    background: rgba(248, 236, 0, 0.973);
+    background: rgba(255,215,0,0.2);
     height: 10px;
     border-radius: 10px;
     overflow: hidden;
@@ -74,7 +94,7 @@ h1 {
     display: block;
     height: 100%;
     border-radius: 10px;
-    background: linear-gradient(90deg, #ffc00309, #01000a);
+    background: linear-gradient(90deg, #ffd700, #bfa000);
     width: 0;
     transition: width 1.4s ease;
 }
@@ -82,8 +102,8 @@ h1 {
 .percent {
     margin-top: 8px;
     font-size: 13px;
-    opacity: .8;
-    color: #cfcfcf;
+    opacity: .9;
+    color: #ffd700;
 }
 
 .vote-box { 
@@ -95,13 +115,13 @@ h1 {
 .vote-box input[type="text"] { 
     padding: 8px;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.998);
+    border: 1px solid rgba(255, 215, 0, 0.6);
     background: rgba(255,255,255,0.03);
-    color: white;
+    color: #fff;
 }
 .vote-box button { 
-    background: #fab801b3;
-    color: white;
+    background: #ffd700c9;
+    color: #000;
     border: none; 
     border-radius: 8px;
     padding: 6px 12px;
@@ -109,13 +129,13 @@ h1 {
     transition: 0.2s; 
 }
 .vote-box button:hover { 
-    background: #f6fa8b; 
+    background: #fff176; 
 }
 
 .comments { 
     margin-top: 8px;
     font-size: 13px;
-    color: #cfcfcf;
+    color: #ffd700;
     max-height: 120px;
     overflow-y: auto; 
 }
@@ -142,12 +162,15 @@ h1 {
 </head>
 
 <body>
-    
-<h1>مهارت ها</h1>
+
+
+<div id="particles-js"></div>
+
+<h1>مهارت‌ها</h1>
 
 <div class="container" id="skillsContainer">
 
-    <!-- نمونه کارت مهارت -->
+   
     <div class="skill-card" data-skill="HTML">
         <h3>HTML</h3>
         <div class="bar"><span data-percent="95%"></span></div>
@@ -192,17 +215,6 @@ h1 {
         <div class="comments"></div>
     </div>
 
-    <div class="skill-card" data-skill="Next.js">
-        <h3>Next.js</h3>
-        <div class="bar"><span data-percent="88%"></span></div>
-        <div class="percent">88%</div>
-        <div class="vote-box">
-            <input type="text" placeholder="نظر خود را بنویسید">
-            <button>ثبت نظر</button>
-        </div>
-        <div class="comments"></div>
-    </div>
-
     <div class="skill-card" data-skill="React">
         <h3>React</h3>
         <div class="bar"><span data-percent="97%"></span></div>
@@ -214,22 +226,46 @@ h1 {
         <div class="comments"></div>
     </div>
 
-    <div class="skill-card" data-skill="JavaScript">
-        <h3>JavaScript</h3>
-        <div class="bar"><span data-percent="85%"></span></div>
-        <div class="percent">85%</div>
-        <div class="vote-box">
-            <input type="text" placeholder="نظر خود را بنویسید">
-            <button>ثبت نظر</button>
-        </div>
-        <div class="comments"></div>
-    </div>
-
 </div>
 
 <div class="back-btn">
-    <a href="index.html">بازگشت به صفحه اصلی</a>
+    <a href="./untitled-1.html">بازگشت به صفحه اصلی</a>
 </div>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#ffd700" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3, "random": true },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffd700",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": { "enable": true, "speed": 2, "out_mode": "out" }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": true, "mode": "repulse" },
+      "onclick": { "enable": true, "mode": "push" },
+      "resize": true
+    },
+    "modes": {
+      "repulse": { "distance": 100, "duration": 0.4 },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
+});
+</script>
 
 <script>
 window.onload = () => {

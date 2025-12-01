@@ -5,34 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>پروژه‌ها</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
-
 <style>
 * {margin:0; padding:0; box-sizing:border-box; font-family:'Vazirmatn';}
 
 body {
   direction: rtl;
   min-height: 100vh;
-  background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
-  position: relative;
-  color: #eefa07;
-  padding: 40px 20px;
+  background: linear-gradient(-45deg, #1a1a1a, #2c3e50, #34495e, #1a1a1a);
+  color: #ffd700;
   overflow-x: hidden;
+  padding: 40px 20px;
+  position: relative;
 }
 
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+
 body::before {
-  content:"";
+  /* content:"helllllsfsdffs"; */
   position: fixed; top:0; left:0;
   width:100%; height:100%;
-  background: rgba(11, 0, 0, 0.83);
+  background: rgba(0,0,0,0.7);
   z-index: -1;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 2.2rem;
-  color: #ffd700;
-  text-shadow: 1px 1px 6px rgb(238, 255, 0);
+  font-size: 2.5rem;
+  background: linear-gradient(135deg,#d4af37,#f6e27a);
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
 .container {
@@ -43,13 +54,13 @@ h1 {
   gap: 25px;
 }
 
-/* کارت پروژه */
+
 .project-card {
-  background: rgba(24, 0, 0, 0.458);
+  background: rgba(24, 0, 0, 0.45);
   backdrop-filter: blur(20px);
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(200, 204, 7, 0.929);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.7);
   transition: transform 0.5s, box-shadow 0.5s;
   cursor: pointer;
   opacity: 0;
@@ -64,7 +75,7 @@ h1 {
 
 .project-card:hover {
   transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 15px 50px rgba(255,255,255,0.2);
+  box-shadow: 0 15px 50px rgba(212, 175, 55, 0.9);
 }
 
 .project-card img {
@@ -83,12 +94,12 @@ h1 {
 
 .project-card p {
   font-size: 14px;
-  color: #cfcfcf;
+  color: #fff8b5;
 }
 
 .project-card .price {
   font-weight: bold;
-  color: #00d8ff;
+  color: #ffd700;
   margin-top: 10px;
   font-size: 16px;
 }
@@ -109,41 +120,31 @@ h1 {
 }
 
 .vote-box button { 
-  background: #fed401e3;
-  color: white;
+  background: #ffd700e3;
+  color: black;
   border: none; border-radius: 8px;
   padding: 6px 12px; 
   cursor: pointer; transition: 0.2s; 
 }
 
-.vote-box button:hover { background: #f5d00054; }
+.vote-box button:hover { 
+  background: #f5d000aa; 
+}
 
 .comments { 
   margin-top: 8px;
   font-size: 13px;
-  color: #fbef03;
+  color: #fff8b5;
   max-height: 120px;
   overflow-y: auto; 
 }
 
-.back-btn { display: flex; justify-content: center; margin-top: 30px; }
-.back-btn a { 
-  background: #fdf501;
-  padding: 12px 20px; 
-  color: white;
-  text-decoration: none; 
-  border-radius: 12px; 
-  transition: 0.3s; 
-}
-.back-btn a:hover { 
-  background: #f9dd02; 
-  box-shadow: 0 0 15px #f9e002;
-}
-.back-btn {
+.back-btn { 
   display:flex;
   justify-content:center;
   margin-top:30px;
 }
+
 .back-btn a {
   background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
   padding:12px 22px;
@@ -153,30 +154,12 @@ h1 {
   font-weight:bold;
   transition:0.3s;
 }
-.back-btn {
-  display:flex;
-  justify-content:center;
-  margin-top:30px;
-}
-.back-btn {
-  display:flex;
-  justify-content:center;
-  margin-top:30px;
-}
-.back-btn a {
-  background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
-  padding:12px 22px;
-  color:#ffd700;
-  text-decoration:none;
-  border-radius:12px;
-  font-weight:bold;
-  transition:0.3s;
-}
+
 .back-btn a:hover {
   background: linear-gradient(90deg, #3d2bd7, #7c3aed);
   box-shadow: 0 0 12px #ffd700;
 }
-/* انیمیشن ورود کارت‌ها */
+
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(30px);}
   100% { opacity: 1; transform: translateY(0);}
@@ -185,7 +168,10 @@ h1 {
 </head>
 <body>
 
-<h1>پروژه‌ها</h1>
+<!-- پس‌زمینه ذرات -->
+<div id="particles-js"></div>
+
+<h1></h1>
 
 <div class="container" id="projectsContainer">
 
@@ -219,6 +205,42 @@ h1 {
     <a href="./Untitled-1.html">بازگشت به صفحه اصلی</a>
 </div>
 
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#ffd700" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3, "random": true },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffd700",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": { "enable": true, "speed": 2, "out_mode": "out" }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": true, "mode": "repulse" },
+      "onclick": { "enable": true, "mode": "push" },
+      "resize": true
+    },
+    "modes": {
+      "repulse": { "distance": 100, "duration": 0.4 },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
+<!-- ذخیره و نمایش نظرات -->
 <script>
 window.onload = () => {
     document.querySelectorAll(".project-card").forEach(card => {
