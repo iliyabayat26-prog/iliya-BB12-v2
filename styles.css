@@ -83,10 +83,10 @@ body {
 header {
     position: sticky;
     top: 0;
-    background: #13000063;
+    background: #00000063;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-gold);
-    padding: 20px 40px;
+    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,7 +125,7 @@ header nav a:hover {
     border: none;
     font-weight: bold;
     cursor: pointer;
-    color: #080000;
+    color: #00000071;
     transition: 0.3s;
     text-decoration: none;
     display: inline-block;
@@ -167,11 +167,11 @@ header nav a:hover {
 
 .hero .card {
     flex: 1 1 450px;
-    background: var(--card);
+    
     backdrop-filter: blur(15px);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 30px;
+    padding:15px;
     color: rgb(252, 250, 250);
     transition: 0.3s;
 }
@@ -335,4 +335,4 @@ textarea:focus {
 }
 
 #whatsappPopup button {
-    background: rgb(151, 112, 
+    background: rgb(151, 112,110);}
